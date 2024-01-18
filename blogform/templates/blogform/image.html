@@ -1,0 +1,27 @@
+
+
+{% extends 'blogform/base.html' %}
+{% load static %}
+{% block cssstyle %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% endblock %}
+{% block content %}
+<div class="card-group mt-4">
+    {% for data in images %}
+    <div class="card">
+      <img src="{{data.image.url}}" class="card-img-top" style="height: 200px; width: 200px;" alt={{data.title}}>
+      <div class="card-body">
+        <h5 class="card-title">{{data.title}}</h5>
+        <p class="card-text">{{data.content}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Posted by {{ data.posted_by }} on {{ data.date }}</small>
+    </div>
+      </div>
+    {% endfor %}
+    </div>
+
+   
+{% endblock %}

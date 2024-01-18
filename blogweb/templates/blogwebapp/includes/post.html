@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssstyle %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% endblock %}
+{% block content %}
+<div class="card-group mt-4">
+    {% for data in posts_data %}
+    <div class="card">
+      <img src="{% static 'image/' %}{{ data.image }}" class="card-img-top" alt={{data.title}}>
+      <div class="card-body">
+        <h5 class="card-title">{{data.title}}</h5>
+        <p class="card-text">{{data.content}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Posted by {{ data.posted_by }} on {{ data.date }}</small>
+        <a href="{% url 'posts' data.slug %}">read more</a>
+    </div>
+      </div>
+    {% endfor %}
+    </div>
+    <h3><a href="{% url 'post' 'all-posts' %}">See all posts</a></h3>
+
+   
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cssstyle %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% endblock %}
+{% block content %}
+<h3>Title:{{posts_data.title}}</h3>
+<img src="{% static 'image/' %}{{ posts_data.image }}" style="height: 300px;width:300px;" alt="">
+<p>{{posts_data.content}}</p>
+<p><span>Author:{{posts_data.Author}}</span> 
+    <span> posted on:{{posts_data.date}}</span></p>
+
+
+   
+{% endblock %}

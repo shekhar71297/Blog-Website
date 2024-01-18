@@ -1,0 +1,20 @@
+
+{% extends 'blogform/base.html' %}
+{% load static %}
+{% block cssstyle %}
+<link rel="stylesheet" href="{% static 'blogform/form.css' %}">
+{% endblock %}
+{% block content %}
+<div class="main-block">
+    <h1>Feedback form</h1>
+    <form method="post" enctype="multipart/form-data">
+        {{form}}
+        {% csrf_token %}
+    <div class="fieldWrapper">
+    </div>
+      <div class="btn-block">
+        <button type="submit" href="/">Submit</button>
+      </div>
+    </form>
+</div>
+{% endblock %}

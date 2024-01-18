@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block cssstyle %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% endblock %}
+{% block content %}
+{% include 'blogwebapp/includes/NavBar.html' %}
+
+{% include 'blogwebapp/includes/post.html' %}
+
+
+{% endblock %}
